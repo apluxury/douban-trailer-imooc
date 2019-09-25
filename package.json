@@ -1,0 +1,23 @@
+{
+  "name": "douban-trailer-imooc",
+  "version": "1.0.0",
+  "description": "{**When you're done, you can delete the content in this README and update the file with details for others getting started with your repository**}",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:aluxury/douban-trailer-imooc.git"
+  },
+  "keywords": [
+    "movie",
+    "trailer"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.8.1"
+  }
+}
