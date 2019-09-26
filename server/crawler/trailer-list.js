@@ -1,6 +1,6 @@
 // 爬取豆瓣数据
 const puppeteer = require('puppeteer')
-const url = `https://movie.douban.com/tag/#/?sort=U&range=6,10&tags=`;
+const url = `https://movie.douban.com/subject/26752088/`;
 // 定义一个定时函数
 const sleep = time => new Promise(resolve => {
     setTimeout(resolve, time)
@@ -23,7 +23,7 @@ const sleep = time => new Promise(resolve => {
     // 点击页面加载更多按钮 id是more
     await page.waitForSelector('.more')
     // 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 1; i++) {
         await sleep(3000)
         await page.click('.more')
     }
@@ -61,7 +61,7 @@ const sleep = time => new Promise(resolve => {
     })
     // 关闭浏览器
     browser.close()
-    //    发送打印结果
+    //发送打印结果
     process.send({ result })
     // 退出进程
     process.exit(0)

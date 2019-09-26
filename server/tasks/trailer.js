@@ -4,7 +4,7 @@ const cp = require('child_process')
 const { resolve } = require('path');
 // 自动执行函数
 (async () => {
-    const script = resolve(__dirname, '../crawler/trailer-list.js')
+    const script = resolve(__dirname, '../crawler/video')
     // cp.fork方法创建子进程 传入两个参数 ；执行脚本 ，返回数组 
     const child = cp.fork(script, [])
     // 表示进程标识符
@@ -28,8 +28,7 @@ const { resolve } = require('path');
 
     // 子进程返回结果
     child.on('message', data => {
-        let result = data.result
-        console.log(result);
+        console.log(data);
     })
 })()
 
