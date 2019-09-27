@@ -30,7 +30,7 @@ const uploadToQiniu = async (url, key) => {
                 video: 'http://vt1.doubanio.com/201809041039/d006607f7382538b0c35a49bf5c69b12/view/movie/M/402320087.mp4',
                 doubanId: '4058933',
                 poster: 'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2524354600.webp',
-                cover: 'https://img3.doubanio.com/img/trailer/medium/2524216073.jpg'
+                cover: 'https://img3.doubanio.com/img/trailer/medium/2524216073.jpg',
             }
         ]
 
@@ -56,15 +56,14 @@ const uploadToQiniu = async (url, key) => {
                     }
 
                     console.log(movie)
-                    // {
-                    //     video: 'http://vt1.doubanio.com/201809041039/d006607f7382538b0c35a49bf5c69b12/view/movie/M/402320087.mp4',
-                    //     doubanId: '4058933',
-                    //     poster: 'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2524354600.webp',
-                    //     cover: 'https://img3.doubanio.com/img/trailer/medium/2524216073.jpg',
-                    //     videoKey: 'QsJXHqot3Mjy2CRZF8uIC.mp4',
-                    //     coverKey: 'RUcgUldYSBhFVSMvh_OhX.png',
-                    //     posterKey: 'omqFwCiCI4ZnR37zM-U-v.png'
-                    // }
+                    // video: 'http://vt1.doubanio.com/201809041039/d006607f7382538b0c35a49bf5c69b12/view/movie/M/402320087.mp4',
+                    // doubanId: '4058933',
+                    // poster: 'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2524354600.webp',
+                    // cover: 'https://img3.doubanio.com/img/trailer/medium/2524216073.jpg',
+                    // videoKey: 'http://movie.52react.cn/8MWZa9kgo_WDZOFRXyVTR.mp4',
+                    // coverKey: 'http://movie.52react.cn/_jDIEp0pJywVfGAZ8I0TD.png',
+                    // posterKey: 'http://movie.52react.cn/zRNBjo5bbtWbW-WA6ciDL.png'
+
                 } catch (err) {
                     console.log(err)
                 }
@@ -72,21 +71,4 @@ const uploadToQiniu = async (url, key) => {
         })
     })()
 
-//在tasks/movie.js中爬取到电影列表信息(里面含有poster),取得某个电影的doubanId,再由doubanId在trailer中爬取video和cover,组成下面的数组
-// let movies = [
-//     { 
-//         video: 'http://vt1.doubanio.com/201809041039/d006607f7382538b0c35a49bf5c69b12/view/movie/M/402320087.mp4',
-//         doubanId: '4058933',
-//         poster: 'https://img3.doubanio.com/view/photo/l_ration_poster/public/p2524354600.jpg',
-//         cover: '"https://img3.doubanio.com/img/trailer/medium/2524216073.jpg"' 
-//     }
-// ]
 
-//将单个电影的video,cover,poster上传到七牛上面,得到下面的三个key,也就是视频和图片的外链地址
-// { video: 'http://vt1.doubanio.com/201809041039/d006607f7382538b0c35a49bf5c69b12/view/movie/M/402320087.mp4',
-//   doubanId: '4058933',
-//   poster: 'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2524354600.webp',
-//   cover: 'https://img3.doubanio.com/img/trailer/medium/2524216073.jpg',
-//   videoKey: 'http://peie35zt9.bkt.clouddn.com/2f71VdCTLD7S42ey1Bryx.mp4',
-//   coverKey: 'http://peie35zt9.bkt.clouddn.com/tZ5Jk9QWVLSj__vV94FAj.png',
-//   posterKey: 'http://peie35zt9.bkt.clouddn.com/DO2VnIgA5Bd0Yywz~wnru.png' }
