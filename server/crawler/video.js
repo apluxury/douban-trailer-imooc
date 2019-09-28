@@ -39,6 +39,8 @@ const sleep = time => new Promise(resolve => {
             cover = cover.replace("url(", "")
             cover = cover.replace(/\?/, "")
             cover = cover.replace(/\)/, "")
+            // alert(cover)
+
 
             //将得到的结果封装成对象返回给result
             return {
@@ -75,7 +77,8 @@ const sleep = time => new Promise(resolve => {
     // 关闭浏览器
     browser.close()
     //发送打印结果
-    process.send({ data })
+    // process.send({ data })
+    process.send(data)
     // 退出进程
     process.exit(0)
 })()

@@ -1,6 +1,6 @@
 // 爬取豆瓣数据
 const puppeteer = require('puppeteer')
-const url = `https://movie.douban.com/subject/26752088/`;
+const url = 'https://movie.douban.com/tag/#/?sort=R&range=6,10&tags='
 // 定义一个定时函数
 const sleep = time => new Promise(resolve => {
     setTimeout(resolve, time)
@@ -61,6 +61,8 @@ const sleep = time => new Promise(resolve => {
     })
     // 关闭浏览器
     browser.close()
+    console.log(result);
+
     //发送打印结果
     process.send({ result })
     // 退出进程

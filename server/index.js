@@ -6,7 +6,7 @@ const views = require('koa-views')
 const hostname = '127.0.0.1';
 const { resolve } = require('path');
 const { connect, initSchemas } = require('./database/init');
-// const router = require('./routes');
+const router = require('./routes/movie');
 
 
 // 链接服务器
@@ -17,10 +17,10 @@ const { connect, initSchemas } = require('./database/init');
     require('./tasks/api')
 })()
 
-// koa-router 固定用法
-// app
-//     .use(router.routes())
-//     .use(router.allowedMethods())
+// koa - router 固定用法
+app
+    .use(router.routes())
+    .use(router.allowedMethods())
 
 
 app.use(views(resolve(__dirname, './views'), {
